@@ -2,10 +2,10 @@ SELECT
     rp.name AS vendor,
     po.name AS PO,
     CASE 
-    WHEN po.picking_type_id = 7 THEN 'Dropship'
-    WHEN po.picking_type_id = 9 then 'Outright'
-    WHEN po.picking_type_id = 10 then 'Transshipment'
-    ELSE ''
+        WHEN po.picking_type_id = 7 THEN 'Dropship'
+        WHEN po.picking_type_id = 9 then 'Outright'
+        WHEN po.picking_type_id = 10 then 'Transshipment'
+        ELSE ''
     END AS procurement_type,
     DATE(po.create_date + INTERVAL '7 HOUR') AS create_date,
     DATE(po.date_approve + INTERVAL '7 HOUR') AS approved_date,
